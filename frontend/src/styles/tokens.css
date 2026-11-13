@@ -1,0 +1,116 @@
+:root {
+  /* Canvas & Surfaces - Refined Dark Slate */
+  --bg-base: #0B0F17;
+  --surface-1: #111827;
+  --surface-2: #1E293B;
+  --surface-3: #273549;
+  --surface-field: #0D131F;
+
+  /* Borders & Dividers */
+  --border: #1E293B;
+  --border-subtle: #243044;
+  --border-focus: #3B82F6;
+
+  /* Typography */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-tertiary: #64748B;
+
+  /* Primary Action */
+  --action: #2563EB;
+  --action-hover: #1D4ED8;
+  --action-pressed: #1E40AF;
+  --action-tint: rgba(37, 99, 235, 0.12);
+  --focus-ring: #60A5FA;
+
+  /* Semantic Feedback */
+  --error: #EF4444;
+  --error-bg: rgba(239, 68, 68, 0.1);
+  --error-border: rgba(239, 68, 68, 0.25);
+
+  --success: #10B981;
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --success-border: rgba(16, 185, 129, 0.25);
+
+  --warning: #F59E0B;
+  --warning-bg: rgba(245, 158, 11, 0.1);
+  --warning-border: rgba(245, 158, 11, 0.25);
+
+  --disabled-fg: rgba(148, 163, 184, 0.5);
+  --disabled-bg: rgba(15, 23, 42, 0.6);
+
+  /* Font Stacks */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
+
+  /* Strict Spacing Scale (4pt base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-pill: 9999px;
+
+  /* Elevation (No decorative glow) */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 28px -4px rgba(0, 0, 0, 0.45);
+
+  --glass-bg: rgba(11, 15, 23, 0.85);
+  --glass-blur: blur(12px);
+}
+
+/* Light Theme Variant */
+[data-theme="light"] {
+  --bg-base: #F8FAFC;
+  --surface-1: #FFFFFF;
+  --surface-2: #F1F5F9;
+  --surface-3: #E2E8F0;
+  --surface-field: #FFFFFF;
+
+  --border: #E2E8F0;
+  --border-subtle: #CBD5E1;
+  --border-focus: #2563EB;
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #64748B;
+
+  --action: #2563EB;
+  --action-hover: #1D4ED8;
+  --action-pressed: #1E40AF;
+  --action-tint: rgba(37, 99, 235, 0.08);
+  --focus-ring: #2563EB;
+
+  --error: #DC2626;
+  --error-bg: rgba(220, 38, 38, 0.08);
+  --error-border: rgba(220, 38, 38, 0.2);
+
+  --success: #059669;
+  --success-bg: rgba(5, 150, 105, 0.08);
+  --success-border: rgba(5, 150, 105, 0.2);
+
+  --warning: #D97706;
+  --warning-bg: rgba(217, 119, 6, 0.08);
+  --warning-border: rgba(217, 119, 6, 0.2);
+
+  --disabled-fg: rgba(100, 116, 139, 0.5);
+  --disabled-bg: rgba(241, 245, 249, 0.8);
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 28px -4px rgba(0, 0, 0, 0.12);
+
+  --glass-bg: rgba(255, 255, 255, 0.85);
+}
