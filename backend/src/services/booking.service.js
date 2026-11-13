@@ -381,6 +381,54 @@ export class BookingService {
   }
 
   /**
+   * Flow 1 (Feature 3): Ride Cancellation at Booking Stage
+   * Enforces that booking exists, is CONFIRMED, and cancels it in an SQLite transaction.
+   * Cancelling automatically releases the vehicle schedule lock because getAllBusySlots() filters by status = 'CONFIRMED'.
+   * Also cancels the associated ride_request, ride_offer, and rejects any pending WAITING change requests.
+   */
+  cancelBooking(bookingNumber) {
+    const booking = this.db
+      .prepare('SELECT * FROM bookings WHERE booking_number = ?')
+      .get(bookingNumber);
+
+    if (!booking) {
+      throw new AppError(`Booking '${bookingNumber}' not found.`, 404, 'BOOKING_NOT_FOUND');
+    }
+
+    if (booking.status === 'CANCELLED') {
+      throw AppError.ruleViolation('R8', `Booking ${bookingNumber} is already cancelled.`);
+    }
+
+    if (booking.status !== 'CONFIRMED') {
+      throw AppError.ruleViolation('R8', `Cannot cancel booking with status '${booking.status}'.`);
+    }
+
+    const tx = this.db.transaction(() => {
+      this.db
+        .prepare(`UPDATE bookings SET status = 'CANCELLED' WHERE booking_number = ?`)
+        .run(bookingNumber);
+
+      this.db
+        .prepare(`UPDATE ride_requests SET status = 'CANCELLED' WHERE request_id = ?`)
+        .run(booking.request_id);
+
+      this.db
+        .prepare(`UPDATE ride_offers SET status = 'CANCELLED' WHERE offer_id = ?`)
+        .run(booking.offer_id);
+
+      this.db
+        .prepare(
+          `UPDATE change_requests SET status = 'REJECTED', resolution_note = 'Cancelled due to ride cancellation', resolved_at = ? WHERE booking_number = ? AND status = 'WAITING'`
+        )
+        .run(new Date().toISOString(), bookingNumber);
+    });
+
+    tx();
+
+    return this.getBookingSummary(bookingNumber);
+  }
+
+  /**
    * Retrieves single change request along with its corresponding booking summary.
    */
   getChangeRequest(changeId) {
