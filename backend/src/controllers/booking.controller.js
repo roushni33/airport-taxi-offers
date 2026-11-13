@@ -54,6 +54,15 @@ export class BookingController {
   }
 
   /**
+   * Endpoint: POST /bookings/:bookingNumber/cancel
+   * Cancels a confirmed booking and releases vehicle schedule locks.
+   */
+  cancelBooking(req, res) {
+    const cancelled = this.bookingService.cancelBooking(req.params.bookingNumber);
+    res.json(ApiResponse.ok(cancelled, 'Booking cancelled successfully'));
+  }
+
+  /**
    * Endpoint: GET /change-requests/:changeId
    * Retrieves single change request along with its corresponding booking summary.
    */

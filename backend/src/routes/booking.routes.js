@@ -24,6 +24,12 @@ export function createBookingRouter(controller) {
     asyncHandler((req, res) => controller.getBooking(req, res))
   );
 
+  // Flow 1 (Feature 3): Ride Cancellation at Booking Stage
+  router.post(
+    '/bookings/:bookingNumber/cancel',
+    asyncHandler((req, res) => controller.cancelBooking(req, res))
+  );
+
   // 11. Traveler Sends Flight/Pickup Change Request (M7, R9)
   router.post(
     '/bookings/:bookingNumber/change-request',

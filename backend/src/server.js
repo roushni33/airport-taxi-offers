@@ -78,6 +78,8 @@ app.use(
 // 6. Global Error Handler
 app.use(globalErrorHandler);
 
-app.listen(ENV.PORT, () => {
+const server = app.listen(ENV.PORT, () => {
   logger.info(`Airport Taxi Offers Backend running on http://localhost:${ENV.PORT}/api/v1`);
 });
+
+export { app, server, catalogService, bookingService, requestService, supplierService, adminService };

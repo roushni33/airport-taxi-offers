@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "charles-polish": {
+      "source": "LemonFace0309/charles-skills",
+      "sourceType": "github",
+      "skillPath": "skills/charles-polish/SKILL.md",
+      "computedHash": "36351aa2d3866488b5cb3a4dce77dd58da43bb02fc87f6a0497ecd811992e28f"
+    },
+    "diagram-design": {
+      "source": "cathrynlavery/diagram-design",
+      "sourceType": "github",
+      "skillPath": "skills/diagram-design/SKILL.md",
+      "computedHash": "c52a4638d5fb7eb8fa4287ce4ae7a3529c24433790c5101f9b0f526d57d04163"
+    }
+  }
+}
