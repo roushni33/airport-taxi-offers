@@ -18,3 +18,11 @@ build/
 .env.*
 .DS_Store
 Thumbs.db
+skills-lock.json
+tsconfig.json
+vite.config.mjs
+vite.config.ts
+bun.lock
+index.html
+package-lock.json
+package.json
