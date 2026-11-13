@@ -379,4 +379,21 @@ export class BookingService {
 
     return this.getBookingSummary(booking.booking_number);
   }
+
+  /**
+   * Retrieves single change request along with its corresponding booking summary.
+   */
+  getChangeRequest(changeId) {
+    const chg = this.db
+      .prepare('SELECT * FROM change_requests WHERE change_id = ?')
+      .get(changeId);
+    if (!chg) {
+      throw new AppError(`Change request '${changeId}' not found.`, 404, 'CHANGE_REQUEST_NOT_FOUND');
+    }
+    const booking = this.getBookingSummary(chg.booking_number);
+    return {
+      ...chg,
+      booking,
+    };
+  }
 }

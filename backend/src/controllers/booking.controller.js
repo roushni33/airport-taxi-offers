@@ -52,4 +52,13 @@ export class BookingController {
     );
     res.json(ApiResponse.ok(updated, `Change request ${req.body.action}ED`));
   }
+
+  /**
+   * Endpoint: GET /change-requests/:changeId
+   * Retrieves single change request along with its corresponding booking summary.
+   */
+  getChangeRequest(req, res) {
+    const data = this.bookingService.getChangeRequest(req.params.changeId);
+    res.json(ApiResponse.ok(data, 'Change request fetched'));
+  }
 }

@@ -36,5 +36,11 @@ export function createBookingRouter(controller) {
     asyncHandler((req, res) => controller.respondToChangeRequest(req, res))
   );
 
+  // Get Single Change Request Details
+  router.get(
+    '/change-requests/:changeId',
+    asyncHandler((req, res) => controller.getChangeRequest(req, res))
+  );
+
   return router;
 }
