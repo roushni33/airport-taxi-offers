@@ -88,31 +88,6 @@ npm run build
 
 ---
 
-## 🎬 4-Minute Winning Demo Script (Menon Scenario)
-
-You can run this demo manually or click **"Menon Demo Run"** in the top navigation bar:
-
-1. **Traveler Tab:**
-   - Click "Menon Demo Run" (pre-fills Flight `FL-401` landing NRT at 10:30, Hotel `HTL-TYO-004` Ueno Garden Inn, 2 adults, 1 child aged 6, 3 large + 2 small bags, 11:30 pickup, ₹12,000 price).
-   - Click **Post Ride Request**.
-2. **Supplier Tab (Sakura Cabs):**
-   - In nav bar, click "Switch" -> Select "Taxi Supplier" -> "Sakura Cabs".
-   - Open the Menon request -> Click **Assign Car & Set Price**.
-   - Select `SC-2` (SUV) -> Shows Rule R6 refusal banner (busy on `RIDE-0001`).
-   - Select `SC-1` (Sedan) -> Shows Rule R5 refusal banner (only 2 large bags space).
-   - Select `SC-3` (SUV) -> Enter `₹12,500` -> Click **Submit Taxi Offer**.
-3. **Supplier Tab (Edo Premium Cars):**
-   - Switch supplier to "Edo Premium Cars" -> Open request -> Assign `EP-2` at `₹13,200`.
-4. **Traveler Tab:**
-   - Switch role to Traveler -> Open offers list.
-   - Click **Reject** on `EP-2` (card greys out with "Rejected" label).
-   - Click **Book Ride** on `SC-3` -> Confirm in dialog -> 10-digit booking number is generated and summary opens.
-5. **Change Flight:**
-   - Click **Request Flight / Pickup Change** -> Select `FL-402` (landing next day) -> Submit.
-   - Switch to Sakura Cabs -> Click **Review Flight Change Request** -> Click **Accept & Update Booking**.
-   - Booking successfully updates!
-
----
 
 ## 📂 Project Structure
 
